@@ -1,5 +1,5 @@
 {
-  "name": "api-utils",
+  "name": "@eoko/api-utils",
   "version": "1.0.0",
   "description": "Eoko Utils used for Eoko's API",
   "homepage": "http://eoko.fr",
