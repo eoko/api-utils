@@ -1,3 +1,5 @@
+const assert = require('assert');
+
 module.exports = (req, res, next) => {
   assert.equal(typeof req, 'object', 'req must be an object of group');
   assert.equal(typeof req.headers, 'object', 'req.headers must be an object');
