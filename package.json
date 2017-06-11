@@ -50,7 +50,6 @@
   },
   "repository": "github.com:eoko/eoko-api-models",
   "scripts": {
-    "prepublish": "gulp prepublish",
     "test": "gulp"
   },
   "license": "MIT",
