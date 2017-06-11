@@ -4,10 +4,11 @@ module.exports = function groupParser(req, res, next) {
   assert.equal(typeof req, 'object', 'req must be an object of group');
   assert.equal(typeof req.headers, 'object', 'req.headers must be an object');
 
-  const groups = [];
-  const member = [];
-  const admin  = [];
-  const owner  = [];
+  const groups        = [];
+  const organizations = [];
+  const member        = [];
+  const admin         = [];
+  const owner         = [];
 
   if (typeof req.headers['x-consumer-groups'] === 'string') {
     req
@@ -21,6 +22,8 @@ module.exports = function groupParser(req, res, next) {
         if (split[0] === 'org') {
           const org   = split[1];
           const level = split[2];
+
+          organizations.push(org);
 
           switch (level) {
             case 'owner':
@@ -42,10 +45,11 @@ module.exports = function groupParser(req, res, next) {
   req.isUser    = groups.includes('user'); // eslint-disable-line no-param-reassign
   req.isService = groups.includes('service'); // eslint-disable-line no-param-reassign
 
-  req.groups = groups; // eslint-disable-line no-param-reassign
-  req.owner  = owner; // eslint-disable-line no-param-reassign
-  req.admin  = admin; // eslint-disable-line no-param-reassign
-  req.member = member; // eslint-disable-line no-param-reassign
+  req.groups        = groups; // eslint-disable-line no-param-reassign
+  req.organizations = organizations; // eslint-disable-line no-param-reassign
+  req.owner         = owner; // eslint-disable-line no-param-reassign
+  req.admin         = admin; // eslint-disable-line no-param-reassign
+  req.member        = member; // eslint-disable-line no-param-reassign
 
   return next();
 };
