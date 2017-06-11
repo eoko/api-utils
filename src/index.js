@@ -8,6 +8,7 @@ Middlewares.adminOnly           = require('./middlewares/adminOnly');
 Middlewares.userOnly            = require('./middlewares/userOnly');
 Middlewares.currentOrganization = require('./middlewares/currentOrganization');
 Middlewares.organizationAccess  = require('./middlewares/organizationAccess');
+Middlewares.levelOnly           = require('./middlewares/levelOnly');
 
 Handlers.pagination  = require('./handlers/pagination');
 Handlers.groupParser = require('./handlers/groupParser');
