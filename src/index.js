@@ -16,6 +16,7 @@ Handlers.authParser  = require('./handlers/authParser');
 
 Utils.renderTemplate             = require('./utils/render');
 Utils.assertJsonSchemaValidation = require('./utils/assertJsonSchema');
+Utils.renderCollection           = require('./utils/renderCollection');
 
 exports.Handlers    = Handlers;
 exports.Middlewares = Middlewares;
